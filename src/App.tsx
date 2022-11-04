@@ -19,7 +19,9 @@ export const App = () => {
 
   return (
     <div className="container">
-      <h1 className='p-5 text-danger'>Country List</h1>
+      <h1 className={`list__title m-3 text-${Color.Secondary}`}>
+        Country List
+      </h1>
       <CountryList countries={transformedCountries} />
     </div>
   );

@@ -7,7 +7,3 @@ export interface ICountry {
     population: number;
 }
 
-export interface IBadge {
-    population: number,
-    area: number,
-}

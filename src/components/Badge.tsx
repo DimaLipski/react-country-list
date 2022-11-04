@@ -1,17 +1,16 @@
 import React from 'react'
 import { Color } from "./types/colors"
-import { IBadge } from './types/types'
+import { BadgeLabel } from './types/labelTypes';
 
-// interface Ibadge {
-//     population: number,
-//     area: number,
-// }
-
-export const Badge = ({ area, population }: IBadge) => {
-    return (
-        <>
-            <span className={`badge text-bg-${Color.Primary} `}>{`area: ${area}`}</span>
-            <span className={`badge text-bg-${Color.Secondary}`}>{`population: ${population}`}</span>
-        </>
-    )
+interface IBadge {
+    label: BadgeLabel;
+    count: number;
+    color: Color;
 }
+
+export const Badge = ({ label, count, color }: IBadge) => {
+    return (
+        <span className={`badge bg-${color} col-2 p-2`}>{label}: {count}
+        </span>
+    );
+};

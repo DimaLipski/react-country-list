@@ -7,14 +7,8 @@ interface ICountriesList {
 }
 
 export const CountryList = ({ countries }: ICountriesList) => {
-    const transformCountryItems = countries.map(country => {
-        return (<CountryItem
-            {...country}
-        />)
-    })
-    return (
-        <ul className="list-group">
-            {transformCountryItems}
-        </ul>
-    )
-}
+    const countryList = countries.map((country) => {
+        return <CountryItem country={country} key={country.name} />;
+    });
+    return <ul className="list-group">{countryList}</ul>;
+};
